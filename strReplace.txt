@@ -1,0 +1,17 @@
+﻿// Replace substring
+// Insert substring
+// Delete substring
+
+function strReplace(str, start, finish, insert) {
+    // The function replaces the substring between the start and finish positions in the original string str with the text insert.
+    // If the start and finish positions are the same, the function inserts new text without replacing the old one.
+    // If there is no text to replace, the function only deletes part of the string.
+
+    if(start===finish && !insert){return str};    // If start=finish and no insert - return initial string
+
+    let firstPart = str.slice(0, start);
+    let lastPart = str.slice(finish, str.lenght);
+
+    if(insert){ return firstPart+insert+lastPart }
+    else{ return firstPart+lastPart };
+};
